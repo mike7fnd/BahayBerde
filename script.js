@@ -119,3 +119,41 @@ document.querySelectorAll('.carousel').forEach(carousel => {
     images[index].classList.add('active');
   });
 });
+
+  function updateCartTotal() {
+    let total = 0;
+    const items = document.querySelectorAll('#cart .cart-item');
+
+    items.forEach(item => {
+      const priceText = item.querySelector('p').textContent.replace('$', '').replace('/month', '');
+      const qty = parseInt(item.querySelector('input').value);
+      total += parseFloat(priceText) * qty;
+    });
+
+    document.getElementById('cart-total').textContent = `$${total}`;
+  }
+
+  // Recalculate when quantity changes
+  document.querySelectorAll('#cart input[type="number"]').forEach(input => {
+    input.addEventListener('input', updateCartTotal);
+  });
+
+  // Remove item from cart
+  document.querySelectorAll('.remove-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.target.closest('.cart-item').remove();
+      updateCartTotal();
+    });
+  });
+
+  // Call once on load
+  updateCartTotal();
+
+
+
+  function toggleDetails(button) {
+    const details = button.nextElementSibling;
+    const isVisible = details.style.display === 'block';
+    details.style.display = isVisible ? 'none' : 'block';
+    button.textContent = isVisible ? 'View Details' : 'Hide Details';
+  }

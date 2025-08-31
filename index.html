@@ -19,7 +19,7 @@
 <section id="hero" class="page active">
   <div class="hero-content">
 <h1 class="newspaper-title">BahayBerde</h1>
-    <p>Connect with local farmers to grow your favorite crops virtually. Select, plant, and support sustainable farming anywhere through our network of farmers.</p>
+    <p>Connect with local farmers to grow your favorite crops virtually. Select, plant, and support sustainable farming anywhere through our network of farmers. Note: This is only a beta version.</p>
     <button class="btn" onclick="switchPage('featured-farmers')">Explore Farmers</button>
   </div>
 
@@ -165,7 +165,6 @@
 
 
 
-
 <!-- Maps Page Content -->
 <div class="page" id="maps">
   
@@ -239,6 +238,7 @@
 
 </div> <!-- End page#maps -->
 
+
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
@@ -270,9 +270,101 @@
 
 
 
+<div class="page" id="cart">
+  <h1 style="font-family: 'Times New Roman', Times, serif; font-weight: bold; font-style: italic; font-size: 2rem; text-align: center;">Cart Plant</h1>
 
-<div class="page" id="cart"><h1>Cart</h1></div>
-<div class="page" id="profile"><h1>Profile</h1></div>
+  <div class="cart-container">
+    <!-- Cart Item 1 -->
+    <div class="cart-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0wa-cgblIz3GTpNHSJQrb2QloE5qGJ0ybwlGrDhcYr-vqh1cInICJZsAU&s=10" alt="Fruit Vegetable">
+      
+      <div class="cart-details">
+        <h3>Fruit Vegetable</h3>
+        <p>$15/month</p>
+        <p><strong>Planted by:</strong> Maria's Mini Farm</p>
+        <p><strong>Caretaker:</strong> Miguel Dela Cruz</p>
+        <label>Quantity: <input type="number" value="1" min="1"></label>
+        
+        <button class="details-btn" onclick="toggleDetails(this)">View Details</button>
+        <div class="details-content" style="display: none;">
+          <p><strong>Description:</strong> These fruit vegetables grow in rich soil and are perfect for virtual gardens. Enjoy seasonal produce from local farmers.</p>
+          <p><strong>Location:</strong> Quezon City</p>
+          <p><strong>Includes:</strong> Planting, initial care, monthly maintenance, and progress updates.</p>
+        </div>
+      </div>
+
+      <button class="remove-btn">Remove</button>
+    </div>
+
+    <!-- Cart Item 2 -->
+    <div class="cart-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQTbf5PG13IkAcUC1L8LRNVzoWS1-mjk5C6woUTxhQuMJ_FC3fYajHzqQ&s=10" alt="Spices and Herbs">
+      
+      <div class="cart-details">
+        <h3>Spices and Herbs</h3>
+        <p>$22/month</p>
+        <p><strong>Planted by:</strong> Green Thumb Garden</p>
+        <p><strong>Caretaker:</strong> Ana Llamado</p>
+        <label>Quantity: <input type="number" value="2" min="1"></label>
+        
+        <button class="details-btn" onclick="toggleDetails(this)">View Details</button>
+        <div class="details-content" style="display: none;">
+          <p><strong>Description:</strong> A mix of aromatic herbs like basil, mint, and rosemary. Perfect for home kitchens, with care managed by experts.</p>
+          <p><strong>Location:</strong> Tagaytay</p>
+          <p><strong>Includes:</strong> Organic soil, water monitoring, and weekly updates with photos.</p>
+        </div>
+      </div>
+
+      <button class="remove-btn">Remove</button>
+    </div>
+
+    <!-- Summary -->
+    <div class="cart-summary">
+      <h2>Total: <span id="cart-total">$59</span></h2>
+      <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="page" id="profile">
+  <h1 style="font-family: 'Times New Roman', Times, serif; font-weight: bold; font-style: italic; font-size: 2.5rem; text-align: center;">My Profile</h1>
+
+  <div class="profile-card">
+    <img src="https://i.imgur.com/5tj6S7Ol.png" alt="User Photo" class="profile-photo">
+
+    <div class="profile-info">
+      <h2>Mike Fernandez</h2>
+      <p>Email: mikefernandex227.com</p>
+    </div>
+  </div>
+</div>
+
+<!--
+  <div class="profile-edit-form">
+    <h3>Edit Profile</h3>
+    <label>
+      Name:
+      <input type="text" value="Mike Fernandez">
+    </label>
+    <label>
+      Email:
+      <input type="email" value="mike@example.com">
+    </label>
+    <label>
+      Password:
+      <input type="password" placeholder="••••••••">
+    </label>
+    <button class="btn">Save Changes</button>
+  </div>
+</div> -->
+
+
 
 <!-- Bottom Navigation -->
 <div class="bottom-nav">

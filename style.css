@@ -371,22 +371,17 @@ body {
 
 
 
-
 /* Map Section */
 #leaflet-map {
-  height: calc(60vh - 40px); /* leaves room for header & bottom nav */
+  height: 70vh;
   width: 100%;
-  margin: 1rem 0; /* spacing above and below */
+  margin-top: 1rem;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Map Page Container */
-.page#maps {
-  padding: 1rem 0 140px; /* space above and below, avoid bottom nav */
-  box-sizing: border-box;
-}
+
 
 /* Map Header */
 .map-header {
@@ -501,4 +496,204 @@ body {
   font-size: 0.95rem;
   color: #333;
   margin: 0.2rem 0 0 0;
+}
+
+
+
+
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cart-item img {
+  width: 90px;
+  height: 90px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.cart-details {
+  flex-grow: 1;
+}
+
+.cart-details h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.cart-details p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.cart-details input {
+  padding: 0.3rem 0.5rem;
+  margin-top: 0.3rem;
+  width: 60px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.remove-btn {
+  padding: 0.4rem 0.8rem;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.remove-btn:hover {
+  background-color: #e63946;
+}
+
+.details-btn {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #2e7d32;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.details-btn:hover {
+  background-color: #1b5e20;
+}
+
+.details-content {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #444;
+  background-color: rgba(255,255,255,0.1);
+  padding: 0.8rem;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+}
+
+.cart-summary {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.checkout-btn {
+  margin-top: 0.8rem;
+  padding: 0.7rem 1.5rem;
+  background-color: rgba(34, 139, 34, 0.8);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checkout-btn:hover {
+  background-color: rgba(34, 139, 34, 1);
+}
+
+
+.profile-card {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.profile-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2e7d32;
+}
+
+.profile-info h2 {
+  margin: 0.3rem 0 0.2rem;
+  font-size: 1.3rem;
+  color: #2e7d32;
+}
+
+.profile-info p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.profile-edit-form {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-edit-form h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #388e3c;
+}
+
+.profile-edit-form label {
+  display: block;
+  margin-bottom: 1rem;
+  color: #222;
+  font-size: 0.95rem;
+}
+
+.profile-edit-form input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-top: 0.3rem;
+  background-color: #fff;
+}
+
+.profile-edit-form .btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(34, 139, 34, 0.8);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.profile-edit-form .btn:hover {
+  background-color: rgba(34, 139, 34, 1);
 }
