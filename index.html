@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Virtual Planting App</title>
+    <link rel="stylesheet" href="style.css">
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  
+</head>
+<body>
+
+
+<!-- Home Page Content -->
+<section id="hero" class="page active">
+  <div class="hero-content">
+<h1 class="newspaper-title">BahayBerde</h1>
+    <p>Connect with local farmers to grow your favorite crops virtually. Select, plant, and support sustainable farming anywhere through our network of farmers.</p>
+    <button class="btn" onclick="switchPage('featured-farmers')">Explore Farmers</button>
+  </div>
+
+  <!-- Crop Showcase -->
+  <h2>Popular Crops</h2>
+  <div class="plant-showcase">
+    <div class="plant-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0wa-cgblIz3GTpNHSJQrb2QloE5qGJ0ybwlGrDhcYr-vqh1cInICJZsAU&s=10" alt="Vegetables" class="plant-img">
+      <div class="plant-content">
+        <h3>Vegetables</h3>
+        <p>Fresh, seasonal, and nutrient-rich</p>
+        <div class="plant-price">$15/month</div>
+        <button class="btn">Select Crops</button>
+      </div>
+    </div>
+
+    <div class="plant-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQTbf5PG13IkAcUC1L8LRNVzoWS1-mjk5C6woUTxhQuMJ_FC3fYajHzqQ&s=10" alt="Fruits" class="plant-img">
+      <div class="plant-content">
+        <h3>Fruits</h3>
+        <p>Seasonal varieties from local farms</p>
+        <div class="plant-price">$22/month</div>
+        <button class="btn">Select Crops</button>
+      </div>
+    </div>
+
+    <div class="plant-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMDIRwvNzpH8mfI6kiOzIEfSXsrbrQDFE4JF4vvfIMUgCRusmgpRd9ZZU&s=10" alt="Herbs" class="plant-img">
+      <div class="plant-content">
+        <h3>Herbs & Spices</h3>
+        <p>Basil, mint, rosemary, and more</p>
+        <div class="plant-price">$28/month</div>
+        <button class="btn">Select Crops</button>
+      </div>
+    </div>
+
+    <div class="plant-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQULrT9aPyz6pQop1L-8D9vxJnzE-jXHGNUs44H3jE9LwaVDyIydVVtcPmS&s=10" alt="Leafy Greens" class="plant-img">
+      <div class="plant-content">
+        <h3>Leafy Greens</h3>
+        <p>Nutritious and easy to grow</p>
+        <div class="plant-price">$18/month</div>
+        <button class="btn">Select Crops</button>
+      </div>
+    </div>
+
+    <div class="plant-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxoK005257ufX2C8VISSeWwT1LgA9sMJ_R8z-Hdys9eOjGEGqzccXx_b3N&s=10" alt="Root Vegetables" class="plant-img">
+      <div class="plant-content">
+        <h3>Root Vegetables</h3>
+        <p>Healthy options straight from local farms</p>
+        <div class="plant-price">$20/month</div>
+        <button class="btn">Select Crops</button>
+      </div>
+    </div>
+  </div>
+
+  <h2>How FarmLink Works</h2>
+  <p>Our simple process makes it easy to support farmers and grow crops virtually, even if you don't have land or farming experience.</p>
+
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-number">1</div>
+      <h3>Browse</h3>
+      <p>Explore farmers and available crops in your area</p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-number">2</div>
+      <h3>Select</h3>
+      <p>Choose crops and specify the farm location</p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-number">3</div>
+      <h3>Plant</h3>
+      <p>Farmers plant your selections and provide initial care</p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-number">4</div>
+      <h3>Track</h3>
+      <p>Monitor growth and receive updates through your dashboard</p>
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <h2>What Our Customers Say</h2>
+  <div class="testimonials">
+    <div class="testimonial-card">
+      <p class="testimonial-text">"I love supporting local farmers while growing my favorite crops virtually. FarmLink makes it so easy!"</p>
+      <p class="testimonial-author">- Sarah M.</p>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">"As a farmer, I can reach more customers and manage crops efficiently. The platform transformed my farm business."</p>
+      <p class="testimonial-author">- Michael T.</p>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">"Getting monthly updates and photos of my crops is amazing. It's like farming from home!"</p>
+      <p class="testimonial-author">- Jennifer K.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Maps Page Content -->
+<!-- MAPS PAGE -->
+<div class="page" id="maps">
+  <!-- Map Header -->
+  <div class="map-header">
+    <h2>Explore Local Farms</h2>
+    <p>Find farmers near you and see available plants you can grow virtually.</p>
+  </div>
+
+  <!-- Leaflet Map -->
+  <div id="leaflet-map"></div>
+
+  <!-- Optional Map Cards for Farmers -->
+  <div class="map-card">
+    <h3>Maria's Mini Farm</h3>
+    <p>Quezon City • 12 plants available</p>
+  </div>
+
+  <div class="map-card">
+    <h3>Green Thumb Garden</h3>
+    <p>Tagaytay • 8 plants available</p>
+  </div>
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  // Initialize Leaflet Map
+  const map = L.map('leaflet-map').setView([14.5995, 120.9842], 6); // center on Philippines
+
+  // Add OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+
+  // Sample markers
+  const farms = [
+    { name: "Maria's Mini Farm", coords: [14.6760, 121.0437], info: "12 plants available" },
+    { name: "Green Thumb Garden", coords: [14.0911, 120.6235], info: "8 plants available" }
+  ];
+
+  farms.forEach(farm => {
+    L.marker(farm.coords).addTo(map)
+      .bindPopup(`<b>${farm.name}</b><br>${farm.info}`);
+  });
+</script>
+
+
+
+
+
+<div class="page" id="cart"><h1>Cart</h1></div>
+<div class="page" id="profile"><h1>Profile</h1></div>
+
+<!-- Bottom Navigation -->
+<div class="bottom-nav">
+  <img src="icon1.png" alt="Home" id="icon1">
+  <img src="icon2.png" alt="Maps" id="icon2">
+  <img src="icon3.png" alt="Cart" id="icon3">
+  <img src="icon4.png" alt="Profile" id="icon4">
+</div>
+
+
+
+  <script src="script.js"></script>
+
+
+</body>
+</html>
