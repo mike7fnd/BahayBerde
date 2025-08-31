@@ -77,3 +77,45 @@
       setTimeout(initializeMap, 100); // wait for map container to be visible
     }
   }
+
+// Expand/Collapse function for Read More 
+// Expand/Collapse function for Read More buttons
+document.querySelectorAll('.read-more-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.story-card');
+    const shortText = card.querySelector('.short-text');
+    const fullText = card.querySelector('.full-text');
+
+    if (fullText.style.display === 'block') {
+      fullText.style.display = 'none';
+      shortText.style.display = 'block';
+      btn.textContent = 'Read More';
+    } else {
+      fullText.style.display = 'block';
+      shortText.style.display = 'none';
+      btn.textContent = 'Read Less';
+    }
+  });
+});
+
+
+document.querySelectorAll('.carousel').forEach(carousel => {
+  let index = 0;
+  const images = carousel.querySelectorAll('img');
+  const prevBtn = carousel.querySelector('.prev');
+  const nextBtn = carousel.querySelector('.next');
+
+  images[index].classList.add('active');
+
+  prevBtn.addEventListener('click', () => {
+    images[index].classList.remove('active');
+    index = (index - 1 + images.length) % images.length;
+    images[index].classList.add('active');
+  });
+
+  nextBtn.addEventListener('click', () => {
+    images[index].classList.remove('active');
+    index = (index + 1) % images.length;
+    images[index].classList.add('active');
+  });
+});
