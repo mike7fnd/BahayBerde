@@ -47,6 +47,24 @@ body {
       color: #333;
     }
 
+.search-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.search-container input {
+  width: 100%;
+  max-width: 500px; /* same as hero cards */
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: none; /* remove border */
+  border-radius: 25px;
+  outline: none;
+  background-color: white; /* white background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
 .bottom-nav {
   position: fixed;
   bottom: 15px;

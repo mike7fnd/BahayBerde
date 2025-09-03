@@ -1,3 +1,16 @@
+document.getElementById("searchInput").addEventListener("keypress", function(e) {
+  if (e.key === "Enter") {
+    const query = e.target.value.trim();
+    if(query) {
+      // Example: display search in console
+      console.log("Searching for:", query);
+
+      // Optional: redirect to a search results page
+      // window.location.href = `/search?query=${encodeURIComponent(query)}`;
+    }
+  }
+});
+
 
   const icons = [
     {id: 'icon1', normal: 'icon1.png', clicked: 'icon1_clicked.png', page: 'hero'},
